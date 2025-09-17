@@ -11,7 +11,9 @@ import {
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"]
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "arial"]
 })
 
 export const metadata: Metadata = generateMetadata()
