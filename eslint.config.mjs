@@ -29,15 +29,16 @@ const eslintConfig = async () => {
         ],
         "react/no-unused-state": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "no-unused-expressions": "error",
-        ignores: [
-          "node_modules/**",
-          ".next/**",
-          "out/**",
-          "build/**",
-          "next-env.d.ts"
-        ]
-      }
+        "no-unused-expressions": "error"
+      },
+      ignores: [
+        "node_modules/**",
+        ".next/**",
+        "out/**",
+        "build/**",
+        "next-env.d.ts",
+        "**/.next/**"
+      ]
     }
   ]
 }

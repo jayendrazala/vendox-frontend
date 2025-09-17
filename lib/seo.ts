@@ -108,6 +108,7 @@ export function generateStructuredData({
   description?: string
   url?: string
   image?: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   additionalData?: Record<string, any>
 } = {}) {
   const baseStructuredData = {

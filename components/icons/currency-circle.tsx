@@ -8,6 +8,7 @@ const CurrencyCircle = (props: IconProps) => (
     height="54"
     fill="none"
     viewBox="0 0 51 54"
+    {...props}
   >
     <path
       fill="#B91F3F"

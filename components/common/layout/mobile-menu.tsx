@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetTrigger
 } from "@/components/ui/sheet"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)

@@ -162,7 +162,7 @@ const Testimonials = () => {
 
                   {/* Testimonial */}
                   <blockquote className="text-gray-700 text-sm leading-relaxed">
-                    "{testimonial.testimonial}"
+                    {testimonial.testimonial}
                   </blockquote>
                 </div>
               </CarouselItem>

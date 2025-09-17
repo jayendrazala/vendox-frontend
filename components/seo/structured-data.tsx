@@ -1,7 +1,7 @@
 import { generateStructuredData } from "@/lib/seo"
 
 interface StructuredDataProps {
-  data?: Record<string, any>
+  data?: Record<string, string>
   type?: string
   name?: string
   description?: string

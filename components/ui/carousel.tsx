@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import useEmblaCarousel, {
-  type UseEmblaCarouselType,
+  type UseEmblaCarouselType
 } from "embla-carousel-react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
@@ -18,6 +18,7 @@ type CarouselProps = {
   opts?: CarouselOptions
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
+  // eslint-disable-next-line no-unused-vars
   setApi?: (api: CarouselApi) => void
 }
 
@@ -54,7 +55,7 @@ function Carousel({
   const [carouselRef, api] = useEmblaCarousel(
     {
       ...opts,
-      axis: orientation === "horizontal" ? "x" : "y",
+      axis: orientation === "horizontal" ? "x" : "y"
     },
     plugins
   )
@@ -115,7 +116,7 @@ function Carousel({
         scrollPrev,
         scrollNext,
         canScrollPrev,
-        canScrollNext,
+        canScrollNext
       }}
     >
       <div
@@ -237,5 +238,5 @@ export {
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
-  CarouselNext,
+  CarouselNext
 }

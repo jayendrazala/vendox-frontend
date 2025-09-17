@@ -35,7 +35,7 @@ const WhyChoose = () => {
         {/* Header */}
         <div className="mb-12">
           <div className="px-2 w-max py-1 rounded-full bg-white text-gray-700 border border-gray-200">
-            We're The Right Fit For You
+            We&apos;re The Right Fit For You
           </div>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mt-4">
             Why Choose VendoX?
