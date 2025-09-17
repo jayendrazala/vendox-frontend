@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@/components", "@/lib"]
   },
+  // Vercel handles output automatically
   // Handle font loading issues gracefully
   async headers() {
     return [
@@ -17,7 +18,11 @@ const nextConfig: NextConfig = {
         ]
       }
     ]
-  }
+  },
+  // Ensure proper trailing slash handling
+  trailingSlash: false,
+  // Optimize for production
+  compress: true
 }
 
 export default nextConfig
