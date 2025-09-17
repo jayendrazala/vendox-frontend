@@ -1,0 +1,7 @@
+export { default as Revolutionize } from "./revolutionize"
+export { default as Testimonials } from "./testimonials"
+export { default as GetStartedToday } from "./get-started-today"
+export { default as HowItWorks } from "./how-it-works"
+export { default as Features } from "./features"
+export { default as NumbersTell } from "./numbers-tell"
+export { default as WhyChoose } from "./why-choose"
