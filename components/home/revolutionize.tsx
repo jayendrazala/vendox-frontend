@@ -4,45 +4,40 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import GetStartedModal from "../common/get-started-modal"
 
+const words = [
+  "RO Technician",
+  "AC vendors",
+  "Electricians",
+  "Car",
+  "Bike Service Vendors"
+]
+
 const Revolutionize = () => {
   const [displayText, setDisplayText] = useState("")
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const fullText =
-    "RO Technician / AC vendors / Electricians / Car / Bike Service Vendors"
-
   useEffect(() => {
-    let currentIndex = 0
-    const interval = setInterval(() => {
-      if (currentIndex < fullText.length) {
-        setDisplayText(fullText.slice(0, currentIndex + 1))
-        currentIndex++
+    let charIndex = 0
+    const currentWord = words[currentWordIndex]
+
+    // Type the current word character by character
+    const typingInterval = setInterval(() => {
+      if (charIndex < currentWord.length) {
+        setDisplayText(currentWord.slice(0, charIndex + 1))
+        charIndex++
       } else {
-        clearInterval(interval)
+        clearInterval(typingInterval)
+        // Wait before moving to next word
+        setTimeout(() => {
+          setDisplayText("")
+          setCurrentWordIndex((prev) => (prev + 1) % words.length)
+        }, 2000) // Wait 2 seconds before switching to next word
       }
-    }, 80)
+    }, 100) // Type each character every 100ms
 
-    return () => clearInterval(interval)
-  }, [fullText])
-
-  // Restart animation when component mounts
-  useEffect(() => {
-    const restartInterval = setInterval(() => {
-      setDisplayText("")
-
-      let currentIndex = 0
-      const interval = setInterval(() => {
-        if (currentIndex < fullText.length) {
-          setDisplayText(fullText.slice(0, currentIndex + 1))
-          currentIndex++
-        } else {
-          clearInterval(interval)
-        }
-      }, 80)
-    }, 8000)
-
-    return () => clearInterval(restartInterval)
-  }, [fullText])
+    return () => clearInterval(typingInterval)
+  }, [currentWordIndex])
 
   return (
     <div className="bg-white">
