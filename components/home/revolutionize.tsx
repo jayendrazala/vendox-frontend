@@ -61,9 +61,9 @@ const Revolutionize = () => {
               </p>
 
               {/* Animated Text */}
-              <div className="text-lg font-medium text-gray-700 min-h-[2.5rem] flex items-center">
+              <div className="text-lg font-medium text-gray-700  flex items-center">
                 <div className="relative">
-                  <p className="inline-block text-gray-800 font-semibold sm:h-14 h-[84px]">
+                  <p className="inline-block text-gray-800 font-semibold sm:h-5 h-10">
                     App that will work for{" "}
                     <span className="text-leneraGradient">{displayText}</span>
                   </p>
