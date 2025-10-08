@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const GetStartedToday = () => {
   return (
-    <section className="md:py-15 py-10 ">
+    <section id="contact-us" className="md:py-15 py-10 ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-orange-50 rounded-lg  p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">

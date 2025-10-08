@@ -180,6 +180,10 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* Offset for fixed header */
+  }
 }
 
 @layer utilities {

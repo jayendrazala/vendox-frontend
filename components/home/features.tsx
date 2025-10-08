@@ -1,55 +1,67 @@
 import Image from "next/image"
 import {
+  AccountTreeBg,
   Account,
-  History,
-  Notification,
   Sell,
-  CurrencyCircle
+  History,
+  CurrencyBg,
+  ArrowGrowthBg
 } from "@/components/icons"
 import { cn } from "@/lib/utils"
 
 const Features = () => {
   const features = [
     {
+      icon: <AccountTreeBg />,
+      title: "Seamless Business Registration",
+      description:
+        "Quick and hassle-free business setup to get you started in minutes with all essential details.",
+      left: "lg:ml-[5%] ml-0"
+    },
+    {
       icon: <Account />,
-      title: "Customer Management",
-      description: "Easily store and manage customer details.",
-      left: "lg:ml-[10%] ml-0"
-    },
-    {
-      icon: <History />,
-      title: "Service Histories",
-      description: "Keep detailed records of all services provided.",
-      left: "lg:ml-[20%] ml-0"
-    },
-    {
-      icon: <Notification />,
-      title: "Automated Reminders",
-      description: "Send SMS reminders to customers for upcoming services.",
-      left: "lg:ml-[30%] ml-0"
+      title: "Easily Manage Your Customers",
+      description:
+        "Organize and access customer information effortlessly with our intuitive management system.",
+      left: "lg:ml-[15%] ml-0"
     },
     {
       icon: <Sell />,
-      title: "Customizable Prices",
-      description: "Set default prices for services and edit them as needed.",
-      left: "lg:ml-[20%] ml-0"
+      title: "Manage New Sales and Services",
+      description:
+        "Track and manage all your sales transactions and service deliveries in one centralized platform.",
+      left: "lg:ml-[25%] ml-0"
     },
     {
-      icon: <CurrencyCircle />,
-      title: "Earnings Tracking",
+      icon: <History />,
+      title: "Easily Manage Your AMC Plan",
       description:
-        "Track how much you earn from each service and view projected earnings.",
-      left: "lg:ml-[10%] ml-0"
+        "Streamline annual maintenance contracts with automated tracking, renewals, and customer notifications.",
+      left: "lg:ml-[25%] ml-0"
+    },
+    {
+      icon: <CurrencyBg />,
+      title: "Create and Manage Invoices",
+      description:
+        "Generate professional invoices instantly and keep track of all billing and payment records.",
+      left: "lg:ml-[15%] ml-0"
+    },
+    {
+      icon: <ArrowGrowthBg />,
+      title: "Real-time Dashboard with Earnings",
+      description:
+        "Monitor your business performance with live insights, earnings analytics, and growth metrics.",
+      left: "lg:ml-[5%] ml-0"
     }
   ]
 
   return (
-    <section className="md:py-15 py-10 bg-white">
+    <section id="features" className="md:py-15 py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="md:mb-12 mb-6">
           <div className="px-2 w-max py-1 rounded-full bg-white text-gray-700 border border-gray-200">
-            Essential Tools For You
+            Core features
           </div>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mt-4">
             Features That Empower Your Business

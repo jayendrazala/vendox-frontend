@@ -1,8 +1,49 @@
-import { ArrowRight } from "lucide-react"
+"use client"
 import { Button } from "../ui/button"
 import Image from "next/image"
+import { useState, useEffect } from "react"
+import GetStartedModal from "../common/get-started-modal"
 
 const Revolutionize = () => {
+  const [displayText, setDisplayText] = useState("")
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const fullText =
+    "RO Technician / AC vendors / Electricians / Car / Bike Service Vendors"
+
+  useEffect(() => {
+    let currentIndex = 0
+    const interval = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex + 1))
+        currentIndex++
+      } else {
+        clearInterval(interval)
+      }
+    }, 80)
+
+    return () => clearInterval(interval)
+  }, [fullText])
+
+  // Restart animation when component mounts
+  useEffect(() => {
+    const restartInterval = setInterval(() => {
+      setDisplayText("")
+
+      let currentIndex = 0
+      const interval = setInterval(() => {
+        if (currentIndex < fullText.length) {
+          setDisplayText(fullText.slice(0, currentIndex + 1))
+          currentIndex++
+        } else {
+          clearInterval(interval)
+        }
+      }, 80)
+    }, 8000)
+
+    return () => clearInterval(restartInterval)
+  }, [fullText])
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -12,51 +53,32 @@ const Revolutionize = () => {
             {/* Left Content */}
             <div className="space-y-8">
               {/* Feature Tags */}
-              <div className="flex flex-wrap gap-3 p-1 bg-gray-100 text-neutral-400 text-sm w-max rounded-2xl">
-                <span className="px-2 py-1 rounded-full bg-white text-gray-700 border border-gray-200">
-                  New feature
-                </span>
-                <span className="px-3 py-1 rounded-full flex items-center gap-1">
-                  Automated Reminders
-                  <ArrowRight className="w-3 h-3" />
-                </span>
-              </div>
 
               {/* Headline */}
               <h2 className="text-4xl lg:text-5xl font-semibold text-gray-900 leading-14">
-                Revolutionize Your Local Service Business with VendoX
+                Manage your business from your mobile.
               </h2>
 
               {/* Description */}
               <p className="text-lg text-paragraph/80 leading-7 -mt-2">
-                Our system provides a centralized platform for storing and
-                managing all your customer information, including contact
-                details, service history, and more ensuring that you always have
-                the latest information at your fingertips.
+                Manage customers, track projects, process payments, and get
+                smart automated reminders — all seamlessly in one powerful app.
               </p>
 
-              {/* Social Proof */}
-              <div>
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
-                    <div className="w-10 h-10 bg-gray-300 rounded-full border-2 border-white"></div>
-                    <div className="w-10 h-10 bg-gray-300 rounded-full border-2 border-white"></div>
-                    <div className="w-10 h-10 bg-gray-300 rounded-full border-2 border-white"></div>
-                  </div>
-                  <div className="bg-neutral-100 rounded-md p-1.5">
-                    <div className="text-neutral-500 text-sm h-full flex items-center justify-center">
-                      5000+
-                    </div>
-                  </div>
-                </div>
-                <div className="text-sm text-paragraph/60 font-medium mt-4">
-                  Trusted By Over 5000+ Local Vendors All Over The Country
+              {/* Animated Text */}
+              <div className="text-lg font-medium text-gray-700 min-h-[2.5rem] flex items-center">
+                <div className="relative">
+                  <p className="inline-block text-gray-800 font-semibold sm:h-14 h-[84px]">
+                    App that will work for{" "}
+                    <span className="text-leneraGradient">{displayText}</span>
+                  </p>
                 </div>
               </div>
               {/* CTA Buttons */}
               <div className="flex flex-row gap-4 items-center">
                 <Button
                   size="lg"
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-primary cursor-pointer hover:bg-primary-400 text-white"
                 >
                   Get Started
@@ -76,6 +98,8 @@ const Revolutionize = () => {
           </div>
         </div>
       </main>
+
+      <GetStartedModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </div>
   )
 }

@@ -1,79 +1,81 @@
-import Image from "next/image"
-import { ArrowGrowth, Currency, Sort, AccountTree } from "@/components/icons"
+import {
+  Users,
+  Calendar,
+  FileText,
+  RefreshCw,
+  Wallet,
+  MessageCircle
+} from "lucide-react"
 
 const WhyChoose = () => {
-  const features = [
+  const WhyChooseArray = [
     {
-      icon: <ArrowGrowth />,
-      title: "Boost Your Business",
+      icon: <Users className="w-10 h-10 text-primary" />,
+      title: "Customer Management",
       description:
-        "Increase repeat customers by keeping track of service histories and sending timely reminders."
+        "Keep all your customer details organized and accessible anytime."
     },
     {
-      icon: <Currency />,
-      title: "Track Your Earnings",
+      icon: <Calendar className="w-10 h-10 text-primary" />,
+      title: "Smart Service Management",
       description:
-        "Monitor your income and generate detailed reports to understand your business better."
+        "Easily schedule, track, and manage all service requests in one place."
     },
     {
-      icon: <Sort />,
-      title: "Stay Organized",
+      icon: <FileText className="w-10 h-10 text-primary" />,
+      title: "Integrated Invoicing",
       description:
-        "Never miss a service date again with our automated reminders and upcoming service lists."
+        "Create and track invoices instantly — no need for third-party tools."
     },
     {
-      icon: <AccountTree />,
-      title: "Simplify Your Workflow",
+      icon: <RefreshCw className="w-10 h-10 text-primary" />,
+      title: "Automated AMC Plans",
       description:
-        "Manage all customer information, service details, and schedules in one easy-to-use app."
+        "Manage and renew maintenance contracts automatically with reminders."
+    },
+    {
+      icon: <Wallet className="w-10 h-10 text-primary" />,
+      title: "Payment Records",
+      description:
+        "Record and monitor all received and pending payments with ease."
+    },
+    {
+      icon: <MessageCircle className="w-10 h-10 text-primary" />,
+      title: "Customer Engagement",
+      description:
+        "Connect with customers through built-in communication and updates."
     }
   ]
 
   return (
-    <section className="md:py-15 py-10 bg-gray-50 relative z-20">
+    <section id="why-us" className="md:py-15 py-10 bg-gray-50 relative z-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="mb-12">
           <div className="px-2 w-max py-1 rounded-full bg-white text-gray-700 border border-gray-200">
-            We&apos;re The Right Fit For You
+            What We Are Solving For You
           </div>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mt-4">
             Why Choose VendoX?
           </h2>
         </div>
 
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Image */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <Image
-                src="/images/why-choose.png"
-                alt="VendoX App Screenshots"
-                width={400}
-                height={600}
-                className="object-contain"
-              />
+        {/* Feature Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {WhyChooseArray.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white hover:bg-white px-6 py-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="mb-4">{feature.icon}</div>
+              <h3 className="text-lg font-medium text-gray-900 mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-paragraph/80 text-sm leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-          </div>
-
-          {/* Right Side - Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="hover:bg-white md:px-6 px-0 py-6 rounded-lg hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-paragraph/80 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
