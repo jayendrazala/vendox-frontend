@@ -27,7 +27,10 @@ const HowItWorks = () => {
 
   return (
     <div className="relative">
-      <section className="md:py-15 py-10 relative z-10  backdrop-blur-lg">
+      <section
+        id="how-it-works"
+        className="md:py-15 py-10 relative z-10  backdrop-blur-lg"
+      >
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="space-y-4">
             <div className="px-2 w-max py-1 rounded-full bg-white text-gray-700 border border-gray-200">

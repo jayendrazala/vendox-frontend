@@ -11,15 +11,17 @@ import {
   SheetTrigger
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
+import GetStartedModal from "../get-started-modal"
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const menuItems = [
-    { href: "#", label: "Why Us" },
-    { href: "#", label: "Features" },
-    { href: "#", label: "How It Works" },
-    { href: "#", label: "Contact Us" }
+    { href: "#why-us", label: "Why Us" },
+    { href: "#features", label: "Features" },
+    { href: "#how-it-works", label: "How It Works" },
+    { href: "#contact-us", label: "Contact Us" }
   ]
 
   return (
@@ -50,13 +52,18 @@ const MobileMenu = () => {
           <div className="pt-4 border-t border-gray-200">
             <Button
               className="w-full bg-primary hover:bg-primary-400 text-white"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false)
+                setIsModalOpen(true)
+              }}
             >
               Get VendoX
             </Button>
           </div>
         </div>
       </SheetContent>
+
+      <GetStartedModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </Sheet>
   )
 }
